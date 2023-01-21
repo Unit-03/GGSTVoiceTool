@@ -1,0 +1,125 @@
+﻿{
+	"DEF": {
+		"Long":"Default",
+	},
+	"ANJ": {
+		"Short":"Anji",
+		"Long" :"Anji Mito"
+	},
+	"ANS": {
+		"Long":"Answer"
+	},
+    "AXL": {
+		"Short":"Axl",
+		"Long" :"Axl Low"
+	},
+	"BED": {
+		"Long":"Bedman"
+	},
+    "BGT": {
+		"Long":"Bridget"
+	},
+    "BKN": {
+		"Long":"Baiken"
+	},
+    "CHP": {
+		"Short":"Chipp",
+		"Long" :"Chipp Zanuff"
+	},
+    "COS": {
+		"Short":"Chaos",
+		"Long" :"Happy Chaos"
+	},
+	"DZY": {
+		"Long":"Dizzy"
+	},
+	"ELP": {
+		"Short":"Elphelt",
+		"Long" :"Elphelt Valentine"
+	},
+    "FAU": {
+		"Long":"Faust"
+	},
+    "GIO": {
+		"Long":"Giovanna"
+	},
+    "GLD": {
+		"Short":"Goldlewis",
+		"Long" :"Goldlewis Dickinson"
+	},
+    "INO": {
+		"Long":"I-No"
+	},
+	"JAM": {
+		"Short":"Jam",
+		"Long" :"Jam Kuradoberi"
+	},
+	"JHN": {
+		"Long":"Johnny"
+	},
+    "JKO": {
+		"Short":"Jack-O",
+		"Long" :"Jack-O' Valentine"
+	},
+	"JKO_Adult": {
+		"Short":"Jack-O (Adult)",
+		"Long" :"Jack-O' Valentine (Adult)"
+	},
+	"JKO_Child": {
+		"Short":"Jack-O (Child)",
+		"Long" :"Jack-O' Valentine (Child)"
+	},
+    "KYK": {
+		"Short":"Ky",
+		"Long" :"Ky Kiske"
+	},
+	"KUM": {
+		"Short":"Haehyun",
+		"Long" :"Kum Haehyun"
+	},
+    "LEO": {
+		"Short":"Leo",
+		"Long" :"Leo Whitefang"
+	},
+    "MAY": {
+		"Long":"May"
+	},
+    "MLL": {
+		"Short":"Millia",
+		"Long" :"Millia Rage"
+	},
+    "NAG": {
+		"Long":"Nagoriyuki"
+	},
+    "POT": {
+		"Long":"Potemkin"
+	},
+    "RAM": {
+		"Short":"Ram",
+		"Long" :"Ramlethal Valentine"
+	},
+	"RVN": {
+		"Long":"Raven"
+	},
+    "SIN": {
+		"Short":"Sin",
+		"Long" :"Sin Kiske"
+	},
+	"SLY": {
+		"Long":"Slayer"
+	},
+    "SOL": {
+		"Short":"Sol",
+		"Long" :"Sol Badguy"
+	},
+    "TST": {
+		"Long":"Testament"
+	},
+	"VEN": {
+		"Long":"Venom"
+	},
+    "ZAT": {
+		"Short":"Zato",
+		"Long" :"Zato-ONE"
+	},
+}

@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+
+using Newtonsoft.Json;
+
+namespace GGSTVoiceTool
+{
+	public static partial class Data
+	{
+		public static NarrationData Narration { get; private set; }
+
+		public class NarrationData
+		{
+			#region Properties
+
+			[JsonIgnore]
+			public Language[] Languages => languages;
+			[JsonIgnore]
+			public Character[] this[Language langId] => characters.TryGetValue(langId, out Character[] chars) ? chars : Array.Empty<Character>();
+
+			#endregion
+
+			#region Fields
+
+			[JsonProperty("Languages")]
+			private Language[] languages;
+			[JsonProperty("Characters")]
+			private Dictionary<Language, Character[]> characters;
+
+			#endregion
+		}
+	}
+}

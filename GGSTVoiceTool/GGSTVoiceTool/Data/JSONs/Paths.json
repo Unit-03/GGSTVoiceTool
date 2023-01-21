@@ -1,0 +1,57 @@
+﻿{
+	"GitHub":{
+		"URL"    :"https://github.com",
+		"User"   :"Unit-03",
+		"Repo"   :"GGSTVoiceMod",
+		"RepoURL":"@URL@/@User@/@Repo@",
+		"Latest" :"@RepoURL@/releases/latest",
+	},
+	"Assets":{
+		"URL"  :"@GitHub.RepoURL@/raw/main/Assets",
+		"Cache":"${ExeRoot}/cache",
+		"Voice":{
+			"Path" :"Voice/${Language}/${Character}.zip",
+			"URL"  :"@Assets.URL@/@Path@",
+			"Cache":"@Assets.Cache@/@Path@",
+		},
+		"Narration":{
+			"Path" :"Narration/${Language}/${Character}.zip",
+			"URL"  :"@Assets.URL@/@Path@",
+			"Cache":"@Assets.Cache@/@Path@",
+		}
+	},
+	"UnrealPak":{
+		"Path"    :"${ExeRoot}/UnrealPak",
+		"Filelist":"@Path@/filelist.txt",
+		"Exe"     :"@Path@/UnrealPak.exe"
+	},
+	"Generator":{
+		"Temp":"${ExeRoot}/~temp",
+		"Voice":{
+			"Unpack":"@Generator.Temp@/VO_${Language}_${Character}",
+			"Pack"  :"@Unpack@.pak"
+		},
+		"Narration":{
+			"Unpack":"@Generator.Temp@/NA_${Language}_${Character}",
+			"Pack"  :"@Unpack@.pak"
+		},
+		"Bundle":{
+			"Unpack":"@Generator.Temp@/Bundle",
+			"Pack"  :"@Unpack@.pak"
+		}
+	},
+	"Data":{
+		"Root":"${ExeRoot}/data",
+		"Characters":"@Root@/Characters.json",
+		"Languages" :"@Root@/Languages.json",
+		"Voice"     :"@Root@/Voice.json",
+		"Narration" :"@Root@/Narration.json"
+	},
+	"Config":{
+		"Settings":"${ExeRoot}/settings.json",
+		"GamePaks":"${Game}/RED/Content/Paks",
+		"GameSig" :"@GamePaks@/pakchunk0-WindowsNoEditor.sig",
+		"Install" :"${Game}/~mods/IVOMod",
+		"Manifest":"${Install}/manifest.json"
+	}
+}
