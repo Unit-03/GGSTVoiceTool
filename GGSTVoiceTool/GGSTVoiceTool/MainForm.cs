@@ -19,6 +19,8 @@ namespace GGSTVoiceTool
 		private PathText GamePath;
 		private PathText InstallPath;
 
+		private Scrollable voiceScroll;
+
 		#endregion
 
 		#region Constructor
@@ -27,7 +29,7 @@ namespace GGSTVoiceTool
 		{
 			InitializeComponent();
 
-			string pathsJson = $"{Paths.Properties.ExeRoot}{PATHS_DATA}";
+			string pathsJson = $"{Paths.ExeRoot}{PATHS_DATA}";
 
 			Paths.Initialise(File.ReadAllText(pathsJson));
 			Data .Initialise();

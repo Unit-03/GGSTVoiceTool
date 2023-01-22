@@ -9,11 +9,7 @@ namespace GGSTVoiceTool
 	{
 		#region Regex
 
-		private static Regex BackreferenceMatch = new(@"(?<full>\@(?<backref>.*?)\@)", RegexOptions.Compiled);
-		private static Regex PropertyMatch      = new(@"(?<full>\$\{(?<prop>.*?)\})",  RegexOptions.Compiled);
-		
-		private static Type PathsType      = typeof(Paths);
-		private static Type PropertiesType = typeof(Paths.Properties);
+		private static Regex BackReferenceMatch = new(@"(?<full>\@(?<backref>.*?)\@)", RegexOptions.Compiled);
 
 		#endregion
 
@@ -22,10 +18,7 @@ namespace GGSTVoiceTool
 		private Type startType;
 		private string currentPath;
 
-		private Dictionary<string, PropertyInfo> backreferences;
-		private Dictionary<string, PropertyInfo> properties;
-
-		private bool? hasProperties;
+		private Dictionary<string, PropertyInfo> backReferences;
 
 		#endregion
 
@@ -36,30 +29,32 @@ namespace GGSTVoiceTool
 			startType = context;
 			currentPath = path;
 
-			GetBackreferences();
-			GetPropertyReferences();
+			GetBackReferences();
 		}
 
 		#endregion
 
 		#region Methods
 
-		private void GetBackreferences()
+		private void GetBackReferences()
 		{
-			backreferences = new();
+			backReferences = new();
 
-			MatchCollection matches = BackreferenceMatch.Matches(currentPath);
+			MatchCollection matches = BackReferenceMatch.Matches(currentPath);
 
 			foreach (Match match in matches)
 			{
 				if (match.Success && match.Groups.TryGetValue("backref", out Group backref))
 				{
+					FieldInfo infoF = startType.GetField(backref.Value).is
+
+
 					PropertyInfo info = startType.GetProperty(backref.Value, typeof(RefPath));
 
 					if (info == null)
 					{
 						string[] parts = backref.Value.Split('.');
-						Type root = PathsType;
+						Type root = typeof(Paths);
 
 						for (int i = 0; i < parts.Length - 1; ++i)
 						{
@@ -74,78 +69,52 @@ namespace GGSTVoiceTool
 							root = child;
 						}
 
-						info = root?.GetProperty(parts[^1], typeof(RefPath));
+						info = root?.GetProperty(parts[^1]);
+
+						bool finalised = false;
+						Type backrefType = info.PropertyType;
+
+						if (backrefType == typeof(RefPath))
+						{
+							object value = info.GetValue(null);
+
+							if (value is RefPath path && path.IsFinalised() == true)
+								finalised = true;
+						}
 					}
 
 					if (info != null)
-						backreferences.Add(match.Groups["full"].Value, info);
+						backReferences.Add(match.Groups["full"].Value, info);
 				}
 			}
 		}
 
-		private void GetPropertyReferences()
+		public bool? IsFinalised()
 		{
-			properties = new();
+			if (backReferences.Count == 0)
+				return true;
 
-			MatchCollection matches = PropertyMatch.Matches(currentPath);
 
-			foreach (Match match in matches)
-			{
-				if (match.Success && match.Groups.TryGetValue("prop", out Group prop))
-				{
-					PropertyInfo info = PropertiesType.GetProperty(prop.Value);
-
-					if (info != null)
-						properties.Add(match.Groups["full"].Value, info);
-				}
-			}
-		}
-
-		private bool? HasProperties()
-		{
-			if (hasProperties != null)
-				return hasProperties;
-
-			if (properties.Count > 0)
-				return hasProperties = true;
-
-			foreach (PropertyInfo backref in backreferences.Values)
-			{
-				object value = backref.GetValue(null);
-
-				// If the backreference value is null then we can't determine if it has properties or not
-				//  return null to indicate that the current state is invalid
-				if (value == null)
-					return null;
-
-				if (value is RefPath path)
-				{ 
-					if (path.HasProperties() == true)
-						return hasProperties = true;
-				}
-			}
-
-			return hasProperties = false;
 		}
 
 		public string Evaluate()
 		{
-			if (backreferences.Count == 0 && properties.Count == 0)
+			if (backReferences.Count == 0)
 				return currentPath;
 
 			string evaluated = currentPath;
 
-			if (backreferences.Count > 0)
+			if (backReferences.Count > 0)
 			{
-				string[] keys = new string[backreferences.Count];
+				string[] keys = new string[backReferences.Count];
 				int index = 0;
 
-				foreach (string key in backreferences.Keys)
+				foreach (string key in backReferences.Keys)
 					keys[index++] = key;
 
 				for (int i = 0; i < keys.Length; ++i)
 				{
-					object value = backreferences[keys[i]].GetValue(null);
+					object value = backReferences[keys[i]].GetValue(null);
 
 					if (value == null)
 						return null;
@@ -160,7 +129,7 @@ namespace GGSTVoiceTool
 						if (path.HasProperties() == false)
 						{
 							currentPath = currentPath.Replace(keys[i], valueStr);
-							backreferences.Remove(keys[i]);
+							backReferences.Remove(keys[i]);
 						}
 					}
 				}

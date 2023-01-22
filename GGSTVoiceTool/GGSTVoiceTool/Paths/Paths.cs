@@ -1,6 +1,6 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
-using System.Collections.Generic;
 
 using Newtonsoft.Json.Linq;
 
@@ -12,18 +12,36 @@ namespace GGSTVoiceTool
 
 		public static bool Initialised { get; private set; }
 
+		//  The root directory of the tool executable
+		public static string ExeRoot { get; } = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		
+		public static string Game    { get; set; } // The root directory for Guilty Gear -STRIVE-
+		public static string Install { get; set; } // The root directory for installing mods to
+
+		public static Language  Language  { get; set; } = Language .DEF; // The current active language  (e.g. ENG, JPN, etc.)
+		public static Character Character { get; set; } = Character.DEF; // The current active character (e.g. RAM, ELP, etc.)
+
 		#endregion
 
 		#region Methods
 
-		public static void Initialise(string json)
+		public static bool Initialise(string json)
 		{
-			Initialised = false;
+			if (Initialised)
+				return true;
 
-			JObject state = JObject.Parse(json);
-			RecursiveSetupPaths(typeof(Paths), state);
+			try
+			{
+				JObject state = JObject.Parse(json);
+				RecursiveSetupPaths(typeof(Paths), state);
+			}
+			catch (Exception ex)
+			{
+
+			}
 
 			Initialised = true;
+			return true;
 		}
 
 		private static void RecursiveSetupPaths(Type parent, JObject state)

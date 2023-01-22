@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+
+using Eto.Forms;
+
+namespace GGSTVoiceTool
+{
+	public class VoiceModule : IModule
+	{
+		#region Fields
+
+		#endregion
+
+		#region Methods
+
+		public void SetupLayout(DynamicLayout layout)
+		{
+
+		}
+
+		public bool GenerateMod()
+		{
+			return false;
+		}
+
+		#endregion
+	}
+}

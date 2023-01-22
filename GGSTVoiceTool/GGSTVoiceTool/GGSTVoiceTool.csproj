@@ -25,6 +25,10 @@
     <PackageReference Update="Eto.Platform.Wpf" Version="2.7.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Utility\" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy &quot;$(ProjectDir)Data\JSONs\&quot; &quot;$(ProjectDir)$(OutDir)data\&quot; /v /s /y" />
   </Target>
