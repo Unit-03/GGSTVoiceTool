@@ -4,18 +4,9 @@
 	{
 		public static class Assets
 		{
-			public class Module
-			{ 
-				public RefPath Path  { get; private set; }
-				public RefPath URL   { get; private set; }
-				public RefPath Cache { get; private set; }
-			}
-
-			public static RefPath URL   { get; private set; }
-			public static RefPath Cache { get; private set; }
-
-			public static Module Voice     { get; private set; } = new();
-			public static Module Narration { get; private set; } = new();
+			public static string Root      => $"RED\\Content";
+			public static string Voice     => $"{Root}\\Chara\\{Character}\\Common\\Audio\\Voice\\{Language}";
+			public static string Narration => $"{Root}\\Audio\\Narration\\JPN\\Default";
 		}
 	}
 }

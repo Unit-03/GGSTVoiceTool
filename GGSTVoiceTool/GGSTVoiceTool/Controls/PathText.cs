@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Eto.Forms;
+﻿using Eto.Forms;
 using Eto.Drawing;
 
 namespace GGSTVoiceTool
@@ -13,13 +7,11 @@ namespace GGSTVoiceTool
 	{
 		#region Properties
 
-		// Controls
 		public Label    Title        { get; }
 		public TextArea PathDisplay  { get; }
 		public Button   BrowseButton { get; }
 
-		// Config
-		public bool AllowDirectEditing {
+		public bool Enabled {
 			get => PathDisplay.Enabled;
 			set => PathDisplay.Enabled = value;
 		}
@@ -33,8 +25,8 @@ namespace GGSTVoiceTool
 			Size defaultSize = new(70, 22);	
 
 			Title        = new() { Size = defaultSize, Text = title, VerticalAlignment = VerticalAlignment.Center };
-			PathDisplay  = new() { Size = defaultSize                                                             };
-			BrowseButton = new() { Size = defaultSize, Text = "Browse"                                            };
+			PathDisplay  = new() { Size = defaultSize };
+			BrowseButton = new() { Size = defaultSize, Text = "Browse" };
 
 			layout.BeginHorizontal(false);
 

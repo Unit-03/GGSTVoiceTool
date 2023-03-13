@@ -4,7 +4,7 @@
 	{
 		public static class Log
 		{
-			public static RefPath Path { get; private set; }
+			public static string File => $"{Working}\\log.txt";
 		}
 	}
 }

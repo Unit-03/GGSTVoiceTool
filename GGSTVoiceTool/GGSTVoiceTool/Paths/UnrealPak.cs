@@ -4,9 +4,9 @@
 	{
 		public static class UnrealPak
 		{
-			public static RefPath Path     { get; private set; }
-			public static RefPath Filelist { get; private set; }
-			public static RefPath Exe      { get; private set; }
+			public static string Root       => $"{Working}\\UnrealPak";
+			public static string Filelist   => $"{Root}\\filelist.txt";
+			public static string Executable => $"{Root}\\UnrealPak.exe";
 		}
 	}
 }

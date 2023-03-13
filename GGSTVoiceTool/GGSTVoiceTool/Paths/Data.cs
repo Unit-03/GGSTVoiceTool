@@ -4,11 +4,11 @@
 	{
 		public static class Data
 		{
-			public static RefPath Root       { get; private set; }
-			public static RefPath Characters { get; private set; }
-			public static RefPath Languages  { get; private set; }
-			public static RefPath Voice      { get; private set; }
-			public static RefPath Narration  { get; private set; }
-		}
+			public static string Root => $"{Working}\\data";
+			public static string Characters => $"{Root}\\Characters.json";
+			public static string Languages  => $"{Root}\\Languages.json";
+            public static string Voice      => $"{Root}\\Voice.json";
+            public static string Narration  => $"{Root}\\Narration.json";
+        }
 	}
 }

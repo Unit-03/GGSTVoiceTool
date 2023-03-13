@@ -24,7 +24,7 @@ namespace GGSTVoiceTool
 
 			#region Fields
 
-			private Dictionary<Language, string> languages;
+			private readonly Dictionary<Language, string> languages;
 
 			#endregion
 

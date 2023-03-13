@@ -4,11 +4,11 @@
 	{
 		public static class GitHub
 		{
-			public static RefPath URL     { get; private set; }
-			public static RefPath User    { get; private set; }
-			public static RefPath Repo    { get; private set; }
-			public static RefPath RepoURL { get; private set; }
-			public static RefPath Latest  { get; private set; }
+			public static string URL     => $"https://github.com";
+			public static string User    => $"Unit-03";
+			public static string Repo    => $"GGSTVoiceMod";
+			public static string RepoURL => $"{URL}/{User}/{Repo}";
+			public static string Latest  => $"{RepoURL}/releases/latest";
 		}
 	}
 }

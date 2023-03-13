@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 
 using Newtonsoft.Json;
 
@@ -13,19 +12,18 @@ namespace GGSTVoiceTool
 		[Serializable]
 		public class CharacterName
 		{
-			#region Properties
+            #region Properties
 
-			public string Name { get; set; }
+            public string Name => _name;
+            public string ShortName => _shortName ?? Name;
 
-			public string ShortName {
-				get => _shortName ?? Name;
-				set => _shortName = value;
-			}
+            #endregion
 
-			#endregion
+            #region Fields
 
-			#region Fields
-
+            [JsonProperty("Name")]
+			private string _name = null;
+			[JsonProperty("Short", NullValueHandling = NullValueHandling.Ignore)]
 			private string _shortName = null;
 
 			#endregion
@@ -34,8 +32,8 @@ namespace GGSTVoiceTool
 
 			public CharacterName(string name, string shortName = null)
 			{
-				Name = name;
-				ShortName = shortName;
+				_name = name;
+				_shortName = shortName;
 			}
 
 			#endregion
@@ -57,16 +55,11 @@ namespace GGSTVoiceTool
 
 			#region Fields
 
-			private Dictionary<Character, CharacterName> names;
+			private readonly Dictionary<Character, CharacterName> names;
 
 			#endregion
 
 			#region Constructor
-
-			public CharacterData()
-			{
-				names = new();
-			}
 
 			public CharacterData(string json)
 			{

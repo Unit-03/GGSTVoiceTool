@@ -13,9 +13,7 @@ namespace GGSTVoiceTool
 		{
 			#region Properties
 
-			[JsonIgnore]
 			public Language[] Languages => languages;
-			[JsonIgnore]
 			public Character[] this[Language langId] => characters.TryGetValue(langId, out Character[] chars) ? chars : Array.Empty<Character>();
 
 			#endregion

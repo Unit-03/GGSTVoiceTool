@@ -1,125 +1,125 @@
 ﻿{
 	"DEF": {
-		"Long":"Default",
+		"Name":"Default",
 	},
 	"ANJ": {
-		"Short":"Anji",
-		"Long" :"Anji Mito"
+		"Name" :"Anji Mito",
+		"Short":"Anji"
 	},
 	"ANS": {
-		"Long":"Answer"
+		"Name":"Answer"
 	},
     "AXL": {
-		"Short":"Axl",
-		"Long" :"Axl Low"
+		"Name" :"Axl Low",
+		"Short":"Axl"
 	},
 	"BED": {
-		"Long":"Bedman"
+		"Name":"Bedman"
 	},
     "BGT": {
-		"Long":"Bridget"
+		"Name":"Bridget"
 	},
     "BKN": {
-		"Long":"Baiken"
+		"Name":"Baiken"
 	},
     "CHP": {
-		"Short":"Chipp",
-		"Long" :"Chipp Zanuff"
+		"Name" :"Chipp Zanuff",
+		"Short":"Chipp"
 	},
     "COS": {
-		"Short":"Chaos",
-		"Long" :"Happy Chaos"
+		"Name" :"Happy Chaos",
+		"Short":"Chaos"
 	},
 	"DZY": {
-		"Long":"Dizzy"
+		"Name":"Dizzy"
 	},
 	"ELP": {
-		"Short":"Elphelt",
-		"Long" :"Elphelt Valentine"
+		"Name" :"Elphelt Valentine",
+		"Short":"Elphelt"
 	},
     "FAU": {
-		"Long":"Faust"
+		"Name":"Faust"
 	},
     "GIO": {
-		"Long":"Giovanna"
+		"Name":"Giovanna"
 	},
     "GLD": {
-		"Short":"Goldlewis",
-		"Long" :"Goldlewis Dickinson"
+		"Name" :"Goldlewis Dickinson",
+		"Short":"Goldlewis"
 	},
     "INO": {
-		"Long":"I-No"
+		"Name":"I-No"
 	},
 	"JAM": {
-		"Short":"Jam",
-		"Long" :"Jam Kuradoberi"
+		"Name" :"Jam Kuradoberi",
+		"Short":"Jam"
 	},
 	"JHN": {
-		"Long":"Johnny"
+		"Name":"Johnny"
 	},
     "JKO": {
-		"Short":"Jack-O",
-		"Long" :"Jack-O' Valentine"
+		"Name" :"Jack-O' Valentine",
+		"Short":"Jack-O"
 	},
 	"JKO_Adult": {
-		"Short":"Jack-O (Adult)",
-		"Long" :"Jack-O' Valentine (Adult)"
+		"Name" :"Jack-O' Valentine (Adult)",
+		"Short":"Jack-O (Adult)"
 	},
 	"JKO_Child": {
-		"Short":"Jack-O (Child)",
-		"Long" :"Jack-O' Valentine (Child)"
+		"Name" :"Jack-O' Valentine (Child)",
+		"Short":"Jack-O (Child)"
 	},
     "KYK": {
+		"Name" :"Ky Kiske",
 		"Short":"Ky",
-		"Long" :"Ky Kiske"
 	},
 	"KUM": {
-		"Short":"Haehyun",
-		"Long" :"Kum Haehyun"
+		"Name" :"Kum Haehyun",
+		"Short":"Haehyun"
 	},
     "LEO": {
-		"Short":"Leo",
-		"Long" :"Leo Whitefang"
+		"Name" :"Leo Whitefang",
+		"Short":"Leo"
 	},
     "MAY": {
-		"Long":"May"
+		"Name":"May"
 	},
     "MLL": {
-		"Short":"Millia",
-		"Long" :"Millia Rage"
+		"Name" :"Millia Rage",
+		"Short":"Millia"
 	},
     "NAG": {
-		"Long":"Nagoriyuki"
+		"Name":"Nagoriyuki"
 	},
     "POT": {
-		"Long":"Potemkin"
+		"Name":"Potemkin"
 	},
     "RAM": {
-		"Short":"Ram",
-		"Long" :"Ramlethal Valentine"
+		"Name" :"Ramlethal Valentine",
+		"Short":"Ram"
 	},
 	"RVN": {
-		"Long":"Raven"
+		"Name":"Raven"
 	},
     "SIN": {
-		"Short":"Sin",
-		"Long" :"Sin Kiske"
+		"Name" :"Sin Kiske",
+		"Short":"Sin"
 	},
 	"SLY": {
-		"Long":"Slayer"
+		"Name":"Slayer"
 	},
     "SOL": {
-		"Short":"Sol",
-		"Long" :"Sol Badguy"
+		"Name" :"Sol Badguy",
+		"Short":"Sol"
 	},
     "TST": {
-		"Long":"Testament"
+		"Name":"Testament"
 	},
 	"VEN": {
-		"Long":"Venom"
+		"Name":"Venom"
 	},
     "ZAT": {
-		"Short":"Zato",
-		"Long" :"Zato-ONE"
+		"Name" :"Zato-ONE",
+		"Short":"Zato"
 	},
 }

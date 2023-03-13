@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 using Newtonsoft.Json;
 
@@ -14,18 +15,30 @@ namespace GGSTVoiceTool
 
 		#region Methods
 
-		public static void Initialise()
+		public static bool Initialise()
 		{
+			if (Initialised)
+				return true;
+
 			Initialised = false;
 
-			if (!Paths.Initialised)
-				return;
+			try
+			{
+				Character = new CharacterData(File.ReadAllText(Paths.Data.Characters));
+				Language  = new LanguageData (File.ReadAllText(Paths.Data.Languages));
 
-			Character = new CharacterData(File.ReadAllText(Paths.Data.Characters));
-			Language  = new LanguageData (File.ReadAllText(Paths.Data.Languages ));
+				Voice     = JsonConvert.DeserializeObject<VoiceData>    (File.ReadAllText(Paths.Data.Voice));
+				Narration = JsonConvert.DeserializeObject<NarrationData>(File.ReadAllText(Paths.Data.Narration));
 
-			Voice     = JsonConvert.DeserializeObject<VoiceData>    (File.ReadAllText(Paths.Data.Voice    ));
-			Narration = JsonConvert.DeserializeObject<NarrationData>(File.ReadAllText(Paths.Data.Narration));
+				Initialised = true;
+				return true;
+			}
+			catch
+			{
+
+			}
+
+			return false;
 		}
 
 		#endregion

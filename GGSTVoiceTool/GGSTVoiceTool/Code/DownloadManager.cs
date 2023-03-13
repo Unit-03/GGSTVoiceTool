@@ -22,7 +22,7 @@ namespace GGSTVoiceTool
 
         #region Methods
 
-        public static async Task<(bool, SemVersion)> HasNewRelease()
+        public static async Task<(bool, Version)> HasNewRelease()
         {
 			//GitHubClient client = new GitHubClient(new ProductHeaderValue(Paths.RepoName), 
 			//                                       new Uri($"{Paths.GitHubURL}/{Paths.GitHubUser}"));
@@ -45,7 +45,7 @@ namespace GGSTVoiceTool
 			//    return (false, default);
 			//}
 
-			return (true, SemVersion.Current);
+			return (true, Version.Current);
         }
 
         public static async Task<Stream> DownloadAsset(string url, string cache)

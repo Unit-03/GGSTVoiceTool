@@ -10,9 +10,7 @@ namespace GGSTVoiceTool
 		{
 			#region Properties
 
-			[JsonIgnore]
-			public Language[] Languages => languages;
-			[JsonIgnore]
+			public Language [] Languages  => languages;
 			public Character[] Characters => characters;
 
 			#endregion

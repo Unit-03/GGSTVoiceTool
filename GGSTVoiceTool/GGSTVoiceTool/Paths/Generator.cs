@@ -4,17 +4,11 @@
 	{
 		public static class Generator
 		{
-			public class Module
-			{ 
-				public RefPath Unpack { get; private set; }
-				public RefPath Pack   { get; private set; }
-			}
+			public static string Temp => $"{Working}\\~temp";
 
-			public static RefPath Temp { get; private set; }
-
-			public static Module Voice     { get; private set; } = new();
-			public static Module Narration { get; private set; } = new();
-			public static Module Bundle    { get; private set; } = new();
+			public static string Voice     => $"{Temp}\\VO_{Language}_{Character}.pak";
+			public static string Narration => $"{Temp}\\NA_{Language}_{Character}.pak";
+			public static string Bundle    => $"{Temp}\\Bundle.pak";
 		}
 	}
 }

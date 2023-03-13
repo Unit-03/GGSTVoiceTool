@@ -29,7 +29,7 @@ namespace GGSTVoiceTool
 		{
 			InitializeComponent();
 
-			string pathsJson = $"{Paths.ExeRoot}{PATHS_DATA}";
+			string pathsJson = $"{Paths.Working}{PATHS_DATA}";
 
 			Paths.Initialise(File.ReadAllText(pathsJson));
 			Data .Initialise();

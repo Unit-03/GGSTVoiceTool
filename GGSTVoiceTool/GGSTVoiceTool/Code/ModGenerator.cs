@@ -39,7 +39,7 @@ namespace GGSTVoiceTool
             await Task.Run(() => CreatePak(Paths.Generator.Narration.Unpack, Paths.Generator.Narration.Pack));
 
             // Move the generated mod to the mods folder and copy the signature file over
-            string modRoot = $"{Paths.Config.Install}/Narration";
+            string modRoot = $"{Paths.Config.DefaultInstall}/Narration";
 
             if (!Directory.Exists(modRoot))
                 Directory.CreateDirectory(modRoot);
@@ -100,7 +100,7 @@ namespace GGSTVoiceTool
                 await Task.Run(() => CreatePak(Paths.Generator.Voice.Unpack, Paths.Generator.Voice.Pack));
 
                 // Move the generated mod to the mods folder and copy the signature file over
-                string modRoot = $"{Paths.Config.Install}/{langPatch.Character}";
+                string modRoot = $"{Paths.Config.DefaultInstall}/{langPatch.Character}";
 
                 if (!Directory.Exists(modRoot))
                     Directory.CreateDirectory(modRoot);
@@ -125,8 +125,8 @@ namespace GGSTVoiceTool
                 Directory.Delete(Paths.Generator.Temp, true);
 
             // If we're doing a bundled mod then any already installed mods should be deleted first
-            if (Directory.Exists(Paths.Config.Install))
-                Directory.Delete(Paths.Config.Install, true);
+            if (Directory.Exists(Paths.Config.DefaultInstall))
+                Directory.Delete(Paths.Config.DefaultInstall, true);
 
             foreach (var langPatch in patch)
             {
@@ -155,7 +155,7 @@ namespace GGSTVoiceTool
             await Task.Run(() => CreatePak(Paths.Generator.Bundle.Unpack, Paths.Generator.Bundle.Pack));
 
             // Move the generated mod to the mods folder and copy the signature file over
-            string modRoot = $"{Paths.Config.Install}";
+            string modRoot = $"{Paths.Config.DefaultInstall}";
 
             if (!Directory.Exists(modRoot))
                 Directory.CreateDirectory(modRoot);
@@ -220,7 +220,7 @@ namespace GGSTVoiceTool
             ProcessStartInfo startInfo = new ProcessStartInfo() {
                 Arguments = arguments,
                 CreateNoWindow = true,
-                FileName = Paths.UnrealPak.Exe,
+                FileName = Paths.UnrealPak.Executable,
                 RedirectStandardError = true,
                 RedirectStandardOutput = true,
                 UseShellExecute = false,

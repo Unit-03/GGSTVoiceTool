@@ -18,6 +18,11 @@ namespace GGSTVoiceTool
 
 		}
 
+		public bool CacheAssets()
+		{
+			return false;
+		}
+
 		public bool GenerateMod()
 		{
 			return false;
