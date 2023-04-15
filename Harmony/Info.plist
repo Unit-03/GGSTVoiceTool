@@ -3,9 +3,9 @@
 <plist version="1.0">
   <dict>
     <key>CFBundleName</key>
-    <string>GGSTVoiceTool</string>
+    <string>Harmony</string>
     <key>CFBundleIdentifier</key>
-    <string>com.example.GGSTVoiceTool</string>
+    <string>com.example.Harmony</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>LSMinimumSystemVersion</key>

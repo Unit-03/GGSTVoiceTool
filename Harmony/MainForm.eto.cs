@@ -8,16 +8,10 @@ namespace Harmony
 {
 	public partial class MainForm : Form
 	{
-		#region Constants
-
-		private const string PATHS_DATA = "/data/Paths.json";
-
-		#endregion
-
 		#region Fields
 
-		private PathText GamePath;
-		private PathText InstallPath;
+		private PathText gamePath;
+		private PathText installPath;
 
 		private Scrollable voiceScroll;
 
@@ -80,11 +74,11 @@ namespace Harmony
 		{
 			layout.BeginVertical();
 
-			GamePath    = new PathText(layout, "Game Root");
-			InstallPath = new PathText(layout, "Install Root");
+			gamePath    = new PathText(layout, "Game Root");
+			installPath = new PathText(layout, "Install Root");
 
-			GamePath   .BrowseButton.Click += OnGameRootBrowse;
-			InstallPath.BrowseButton.Click += OnInstallRootBrowse;
+			//GamePath   .BrowseButton.Click += OnGameRootBrowse;
+			//InstallPath.BrowseButton.Click += OnInstallRootBrowse;
 
 			layout.EndVertical();
 		}
